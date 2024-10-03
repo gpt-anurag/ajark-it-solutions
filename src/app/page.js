@@ -1,22 +1,22 @@
-import About from '@/components/About'
-import CallToMeet from '@/components/CallToMeet'
-import ContactUs from '@/components/ContactUs'
-import FAQ from '@/components/FAQ'
-import FeaturedServices from '@/components/FeaturedServices'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
-import Navbar from '@/components/Navbar'
-import Services from '@/components/Services'
-import Stats from '@/components/Stats'
+import About from '@/src/components/About'
+import CallToMeet from '@/src/components/CallToMeet'
+import ContactUs from '@/src/components/ContactUs'
+import FAQ from '@/src/components/FAQ'
+import FeaturedServices from '@/src/components/FeaturedServices'
+import Footer from '@/src/components/Footer'
+import Hero from '@/src/components/Hero'
+import Navbar from '@/src/components/Navbar'
+import Services from '@/src/components/Services'
+import Stats from '@/src/components/Stats'
 
 export default function Home() {
   return (
     <>
-      <header>
+      <header className='h-screen overflow-hidden'>
         <Navbar />
+        <Hero />
       </header>
       <main>
-        <Hero />
         <FeaturedServices />
         <About />
         <Stats />

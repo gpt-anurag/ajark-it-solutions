@@ -30,56 +30,70 @@ const Footer = () => {
     <div className='bg-[#060606] text-white'>
       <div className='w-2/3 2xl:w-4/5 my-0 py-8 mx-auto flex justify-between'>
         <div className='flex flex-col justify-between'>
-          <div>
-            <h2>AJARK</h2>
+          <div className='mb-4'>
+            <h2 className='text-3xl font-bold'>AJARK</h2>
             <br />
             A108 Adam Street <br />
             New York, NY 535022 <br />
             <br />
             <p>
-              <span>Phone:</span> +123 3243 45
+              <span className='font-semibold'>Phone:</span> +123 3243 45
             </p>
             <p>
-              <span>Email:</span> info@example.com
+              <span className='font-semibold'>Email:</span> info@example.com
             </p>
           </div>
-          <div className='flex justify-between'>
+          <div className='flex justify-around gap-2'>
             {socials.map((item) => {
-              return <div key={item.id}>{item.icon}</div>
+              return (
+                <div
+                  key={item.id}
+                  className='cursor-pointer p-4 border border-white rounded-full'
+                >
+                  {item.icon}
+                </div>
+              )
             })}
           </div>
         </div>
 
         <div className='flex gap-10'>
           <div>
-            <h5>Useful Links</h5>
-            <ul>
+            <h5 className='mb-2 font-semibold'>Useful Links</h5>
+            <ul className='ml-2'>
               {useful_links.map((item) => {
                 return (
-                  <li key={item.id}>
-                    <span>&#62;</span> {item.link}
+                  <li
+                    key={item.id}
+                    className='mb-2 text-white/60 hover:text-white/80 cursor-pointer'
+                  >
+                    <span className='font-semibold text-brand'>&#62;</span>{' '}
+                    {item.link}
                   </li>
                 )
               })}
             </ul>
           </div>
           <div>
-            <h5>Our Services</h5>
-            <ul>
+            <h5 className='mb-2 font-semibold'>Our Services</h5>
+            <ul className='ml-2'>
               {services_links.map((item) => {
                 return (
-                  <li key={item.id}>
-                    <span>&#62;</span> {item.link}
+                  <li
+                    key={item.id}
+                    className='mb-2 text-white/60 hover:text-white/80 cursor-pointer'
+                  >
+                    <span className='font-semibold text-brand'>&#62;</span>{' '}
+                    {item.link}
                   </li>
                 )
               })}
             </ul>
           </div>
           <div>
+            <h5 className='mb-2 font-semibold'>In Person Meeting</h5>
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60898.52405920879!2d78.36947000000002!3d17.452162!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb931fa7aa6827%3A0x77727cd7075984e1!2sWorkafella%20Western%20Aqua%2C%20HiTech%20City!5e0!3m2!1sen!2sus!4v1727582024888!5m2!1sen!2sus'
-              width='100%'
-              height='100%'
               style={{ border: '0px' }}
               allowfullscreen=''
               loading='lazy'
@@ -87,6 +101,11 @@ const Footer = () => {
             ></iframe>
           </div>
         </div>
+      </div>
+      <div className='py-4 border-t border-white/30'>
+        <p className='text-center'>
+          © Copyright {<span>AJARK IT Solutions</span>} All Rights Reserved
+        </p>
       </div>
     </div>
   )
