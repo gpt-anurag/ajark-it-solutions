@@ -18,14 +18,16 @@ import {
 
 const Navbar = () => {
   return (
-    <div className=' w-2/3 2xl:w-4/5 my-0 mx-auto  relative'>
-      <div className='absolute w-full flex justify-between py-8 px-0 z-20 text-white'>
-        <a href='#'>AJARK</a>
-        <nav className=''>
+    <div className='absolute z-20 w-full text-white font-semibold text-xl'>
+      <div className='w-2/3 2xl:w-4/5 my-0 mx-auto flex justify-between py-8 px-0'>
+        <a href='#' className='text-4xl'>
+          AJARK
+        </a>
+        <nav className='flex items-center'>
           <ul className='flex flex-row gap-8'>
             <li>Home</li>
             <li>About</li>
-            <li className='text-red-700'>
+            <li className=''>
               <DropdownMenu className='bg-white text-black'>
                 <DropdownMenuTrigger>All Services</DropdownMenuTrigger>
                 <DropdownMenuContent>

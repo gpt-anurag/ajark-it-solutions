@@ -12,12 +12,10 @@ import Stats from '@/src/components/Stats'
 export default function Home() {
   return (
     <>
-      <header className='h-screen overflow-hidden'>
-        <Navbar />
+      <header>
         <Hero />
       </header>
       <main>
-        <FeaturedServices />
         <About />
         <Stats />
         <Services />

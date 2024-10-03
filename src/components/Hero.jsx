@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
   Carousel,
@@ -6,64 +8,61 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { featured_services_data as data } from './FeaturedServices'
+import FeaturedServices, {
+  featured_services_data as data,
+} from './FeaturedServices'
 import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
+import Autoplay from 'embla-carousel-autoplay'
 
 const image_links = [
   {
     id: 1,
-    link: '../../public/img/hero-carousel/hero-carousel-1.jpg',
+    link: '/img/hero-carousel/hero-carousel-1.jpg',
   },
   {
     id: 2,
-    link: '/public/img/hero-carousel/hero-carousel-1.jpg',
+    link: '/img/hero-carousel/hero-carousel-2.jpg',
   },
   {
     id: 3,
-    link: '/public/img/hero-carousel/hero-carousel-1.jpg',
+    link: '/img/hero-carousel/hero-carousel-3.jpg',
   },
   {
     id: 4,
-    link: '/public/img/hero-carousel/hero-carousel-1.jpg',
+    link: '/img/hero-carousel/hero-carousel-4.jpg',
   },
   {
     id: 5,
-    link: '/public/img/hero-carousel/hero-carousel-1.jpg',
+    link: '/img/hero-carousel/hero-carousel-5.jpg',
   },
 ]
 
 const Hero = () => {
   return (
-    <Carousel className='w-full'>
-      <CarouselContent>
-        {Array.from({ length: 3 }).map((_, index) => (
-          <CarouselItem key={index} className='p-0'>
-            <div className='p-0'>
-              <Card>
-                <CardContent className='flex aspect-auto w-screen items-center justify-center p-0'>
-                  <div className='bg-black'>
-                    <p className='text-white'>{index}</p>
-                    <img
-                      src='/img/hero-carousel/hero-carousel-1.jpg'
-                      alt='Hero Image'
-                      // layout='responsive'
-                      width='100%' // Set the width and height for the original aspect ratio
-                      height='800px' // Adjust these numbers according to your image's aspect ratio
-                      // quality={100} // Optional: control image quality (0 to 100)
-                      // priority={true} // Optional: preload the image for better performance
-                      className='opacity-50'
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className='text-white' />
-      <CarouselNext className='text-white' />
-    </Carousel>
+    <>
+      <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
+        <CarouselContent>
+          {image_links.map((item) => {
+            return (
+              <CarouselItem key={item.id}>
+                <div className='relative w-screen h-screen overflow-hidden bg-black'>
+                  {/* <p className='bg-black text-white z-50'>{item.id}</p> */}
+                  <Image
+                    src={item.link}
+                    alt='hero image'
+                    fill
+                    objectFit='cover'
+                    className='opacity-50'
+                  />
+                </div>
+              </CarouselItem>
+            )
+          })}
+        </CarouselContent>
+      </Carousel>
+      <FeaturedServices />
+    </>
   )
 }
 
