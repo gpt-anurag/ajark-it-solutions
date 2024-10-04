@@ -25,9 +25,10 @@ const Navbar = () => {
   // console.log(pathname)
   return (
     <div
-      className={`${
-        pathname === '/' ? 'absolute text-white' : 'relative text-black'
-      } z-20 w-full  font-semibold text-xl`}
+      // className={`${
+      //   pathname === '/' ? 'absolute text-white' : 'absolute text-black'
+      // } z-20 w-full  font-semibold text-xl`}
+      className='absolute text-white z-20 w-full  font-semibold text-xl'
     >
       <div className='w-2/3 2xl:w-4/5 my-0 mx-auto flex justify-between py-8 px-0'>
         <a href='#' className='text-4xl'>

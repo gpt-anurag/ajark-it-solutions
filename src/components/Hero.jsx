@@ -37,43 +37,17 @@ const image_links = [
 const Hero = () => {
   const [emblaApi] = useEmblaCarousel()
   const [api, setApi] = React.useState(emblaApi)
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
 
   React.useEffect(() => {
-    console.log('From api')
-    console.log(api)
     if (!api) {
       return
     }
-
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
-
-    // api.on('select', () => {
-    //   setCurrent(api.selectedScrollSnap() + 1)
-    // })
   }, [api])
 
-  // console.log('count', count)
-  // console.log('current', current)
-  // const scrollPrev = useCallback(() => {
-  //   console.log('i entered here')
-  //   if (emblaApi) {
-  //     console.log('i entered here2')
-
-  //     emblaApi.scrollTo(2, true)
-  //   }
-  //   emblaApi.selectedScrollSnap()
-  // }, [emblaApi])
-
-  const scrollPrev = () => {
-    console.log('i entered here')
+  const onCardClick = (id) => {
     if (api) {
-      console.log('i entered here2')
       api.selectedScrollSnap()
-
-      api.scrollTo(2)
+      api.scrollTo(id)
     }
   }
 
@@ -102,10 +76,10 @@ const Hero = () => {
             )
           })}
         </CarouselContent>
-        <Button onClick={scrollPrev}>jaskdjflk;asjdfkl</Button>
+        {/* <Button onClick={onCardClick}>jaskdjflk;asjdfkl</Button> */}
       </Carousel>
 
-      <FeaturedServices />
+      <FeaturedServices onCardClick={onCardClick} />
     </>
   )
 }
