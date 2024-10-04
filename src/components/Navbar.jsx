@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
   DropdownMenu,
@@ -15,18 +17,30 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
 } from '@radix-ui/react-dropdown-menu'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
+  const pathname = usePathname()
+  // console.log(pathname)
   return (
-    <div className='absolute z-20 w-full text-white font-semibold text-xl'>
+    <div
+      className={`${
+        pathname === '/' ? 'absolute text-white' : 'relative text-black'
+      } z-20 w-full  font-semibold text-xl`}
+    >
       <div className='w-2/3 2xl:w-4/5 my-0 mx-auto flex justify-between py-8 px-0'>
         <a href='#' className='text-4xl'>
           AJARK
         </a>
         <nav className='flex items-center'>
           <ul className='flex flex-row gap-8'>
-            <li>Home</li>
-            <li>About</li>
+            <li>
+              <Link href={'/'}>Home</Link>
+            </li>
+            <li>
+              <Link href={'/services'}>About</Link>
+            </li>
             <li className=''>
               <DropdownMenu className='bg-white text-black'>
                 <DropdownMenuTrigger>All Services</DropdownMenuTrigger>

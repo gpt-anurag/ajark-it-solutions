@@ -12,7 +12,6 @@ const CallToMeet = () => {
           width='100%'
           height='400px'
           style={{ border: '0px' }}
-          allowfullscreen=''
           loading='lazy'
           referrerpolicy='no-referrer-when-downgrade'
         ></iframe>

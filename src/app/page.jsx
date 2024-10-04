@@ -23,9 +23,6 @@ export default function Home() {
         <FAQ />
         <ContactUs />
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   )
 }

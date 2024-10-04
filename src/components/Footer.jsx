@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { BsTwitterX } from 'react-icons/bs'
 import { BsFacebook } from 'react-icons/bs'
@@ -5,11 +6,11 @@ import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 
 const useful_links = [
-  { id: 1, link: 'Home' },
-  { id: 2, link: 'About us' },
-  { id: 3, link: 'Services' },
-  { id: 4, link: 'Terms of service' },
-  { id: 5, link: 'Privacy policy' },
+  { id: 1, link: 'Home', href: '#' },
+  { id: 2, link: 'About us', href: '#' },
+  { id: 3, link: 'Services', href: '/services' },
+  { id: 4, link: 'Terms of service', href: '#' },
+  { id: 5, link: 'Privacy policy', href: '#' },
 ]
 const services_links = [
   { id: 1, link: 'Web Design' },
@@ -67,8 +68,10 @@ const Footer = () => {
                     key={item.id}
                     className='mb-2 text-white/60 hover:text-white/80 cursor-pointer'
                   >
-                    <span className='font-semibold text-brand'>&#62;</span>{' '}
-                    {item.link}
+                    <Link href={`${item.href ? item.href : '#'}`}>
+                      <span className='font-semibold text-brand'>&#62;</span>{' '}
+                      {item.link}
+                    </Link>
                   </li>
                 )
               })}
@@ -90,7 +93,7 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div>
+          <div className='rounded'>
             <h5 className='mb-2 font-semibold'>In Person Meeting</h5>
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60898.52405920879!2d78.36947000000002!3d17.452162!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb931fa7aa6827%3A0x77727cd7075984e1!2sWorkafella%20Western%20Aqua%2C%20HiTech%20City!5e0!3m2!1sen!2sus!4v1727582024888!5m2!1sen!2sus'
@@ -98,6 +101,7 @@ const Footer = () => {
               allowfullscreen=''
               loading='lazy'
               referrerpolicy='no-referrer-when-downgrade'
+              className='rounded'
             ></iframe>
           </div>
         </div>
