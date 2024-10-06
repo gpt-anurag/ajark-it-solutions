@@ -12,38 +12,38 @@ const data = [
   {
     id: 1,
     icon: <BsBriefcase />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Skill Development Workshops',
+    description: ` Offer workshops focused on essential skills (technical, soft skills, and industry-specific knowledge) to prepare freshers for real-world challenges`,
   },
   {
     id: 2,
     icon: <BsCardChecklist />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Mentorship and Coaching',
+    description: ` Connect students with experienced professionals for personalized guidance, helping them navigate their careers and develop industry-specific knowledge`,
   },
   {
     id: 3,
     icon: <BsBarChart />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Project-Based Learning',
+    description: `Provide opportunities for students to work on actual client projects, enabling them to apply their skills in a professional setting and showcase their abilities to potential employers`,
   },
   {
     id: 4,
     icon: <BsBinoculars />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Internship Placement Programs',
+    description: `Facilitate internship opportunities with MNCs, allowing freshers to gain hands-on experience while companies benefit from fresh perspectives`,
   },
   {
     id: 5,
     icon: <BsSun />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Resume Building and Interview Guidance',
+    description: `Offer services that assist students in crafting impactful resumes and preparing for interviews, making them more competitive in the job market`,
   },
   {
     id: 6,
     icon: <BsCalendar4Week />,
-    title: 'Lorem Ipsum',
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: 'Talent Outsourcing Solutions for Clients',
+    description: `Provide MNCs with access to a pool of trained, enthusiastic freshers, tailored to meet their specific project needs while ensuring quality and reliability`,
   },
 ]
 
@@ -63,7 +63,7 @@ const Services = () => {
             return (
               <div
                 key={item.id}
-                className='flex gap-4 border rounded p-4 shadow'
+                className={`flex gap-4 border rounded p-4 shadow ${item.id % 2 === 0 ? 'bg-green-400' : 'bg-red-400'}` }
               >
                 <div className='text-brand text-4xl mt-1'>{item.icon}</div>
                 <div className='flex flex-col gap-2'>

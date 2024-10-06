@@ -14,30 +14,47 @@ const About = () => {
         </h2>
         <div className='text-black/70 flex gap-4 '>
           <div className='flex-1 flex flex-col gap-4'>
-            <p>{`We're your go-to source for all things kitchen equipment. From frying & boiling machines to refrigeration units, and everything in between – we've got you covered. Plus, we offer dining and serving essentials like trolleys, storage cabinets, tables, and dishwashing tools.`}</p>
+            <div>we are your one-stop solution</div>
             <ul className='flex flex-col gap-2'>
               <li className='flex gap-2 '>
                 <span className='text-xl mt-1 text-brand'>
                   <BsCheck2All />
                 </span>
-                <p>{`Experience top-notch kitchen solutions with The Perfect Partner – Where Consultation, Design, and Customization Come Together!"`}</p>
+                <div className='flex-col'>
+                  <h2 className='text-xl font-semibold'>Real-World Experience </h2>
+                  <p>{`Gain hands-on experience by working on actual projects, boosting your resume and confidence`}</p>
+                </div>
               </li>
               <li className='flex gap-2 '>
                 <span className='text-xl mt-1 text-brand'>
                   <BsCheck2All />
                 </span>
-                <p>{`Experience top-notch kitchen solutions with The Perfect Partner – Where Consultation, Design, and Customization Come Together!"`}</p>
+                <div className='flex-col'>
+                  <h2 className='text-xl font-semibold'>Expert Training </h2>
+                  <p>{`Learn from industry professionals through tailored training programs designed to equip you with in-demand skills`}</p>
+                </div>
               </li>
               <li className='flex gap-2 '>
                 <span className='text-xl mt-1 text-brand'>
                   <BsCheck2All />
                 </span>
-                <p>{`Experience top-notch kitchen solutions with The Perfect Partner – Where Consultation, Design, and Customization Come Together!"`}</p>
+                <div className='flex-col'>
+                  <h2 className='text-xl font-semibold'>Job Opportunities </h2>
+                  <p>{`Connect with top companies looking for fresh talent, giving you a direct path to employment after training`}</p>
+                </div>
+              </li>
+              <li className='flex gap-2 '>
+                <span className='text-xl mt-1 text-brand'>
+                  <BsCheck2All />
+                </span>
+                <div className='flex-col'>
+                  <h2 className='text-xl font-semibold'>Supportive Community </h2>
+                  <p>{` Join a network of like-minded peers and mentors who are dedicated to your success and growth`}</p>
+                  </div>
               </li>
             </ul>
           </div>
           <div className='flex-1 flex flex-col gap-4'>
-            <p>{`Kitchen appliance consultancy involves providing expert advice, guidance, and solutions to individuals or businesses in the selection, design, and implementation of kitchen appliances for various purposes. Consultants in this field assist clients in making informed decisions about which appliances to choose based on their specific needs, budget, space constraints, and intended use.`}</p>
             <a href='#' className='font-bold text-brand'>
               Learn More
             </a>
