@@ -19,22 +19,16 @@ import {
 } from '@radix-ui/react-dropdown-menu'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Navbar = () => {
-  const pathname = usePathname()
-  // console.log(pathname)
   return (
-    <div
-      // className={`${
-      //   pathname === '/' ? 'absolute text-white' : 'absolute text-black'
-      // } z-20 w-full  font-semibold text-xl`}
-      className='absolute text-white z-20 w-full  font-semibold text-xl'
-    >
-      <div className='w-2/3 2xl:w-4/5 my-0 mx-auto flex justify-between py-8 px-0'>
+    <div className='absolute text-white z-10 w-full  font-semibold text-xl'>
+      <div className='sm:w-2/3 sm:2xl:w-4/5 my-0 mx-auto flex items-center justify-between py-8 px-4 sm:px-0'>
         <a href='#' className='text-4xl'>
           AJARK
         </a>
-        <nav className='flex items-center'>
+        <nav className='flex items-center hidden sm:block'>
           <ul className='flex flex-row gap-8'>
             <li>
               <Link href={'/'}>Home</Link>
@@ -86,6 +80,9 @@ const Navbar = () => {
             <li>Contact US</li>
           </ul>
         </nav>
+        <div className='text-4xl'>
+          <GiHamburgerMenu />
+        </div>
       </div>
     </div>
   )

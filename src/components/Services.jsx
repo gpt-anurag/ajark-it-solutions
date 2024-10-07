@@ -58,12 +58,12 @@ const Services = () => {
         <h2 className='text-4xl mb-8'>
           <span className='font-bold'>OUR </span>SERVICES
         </h2>
-        <div className='grid grid-cols-2 grid-rows-3 gap-4 '>
+        <div className='grid sm:grid-cols-2 grid-rows-3 grid-cols-1 gap-4 '>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className={`flex gap-4 border rounded p-4 shadow ${item.id % 2 === 0 ? 'bg-green-400' : 'bg-red-400'}` }
+                className={`flex sm:flex-row flex-col gap-4 border rounded sm:p-4 p-6 shadow `}
               >
                 <div className='text-brand text-4xl mt-1'>{item.icon}</div>
                 <div className='flex flex-col gap-2'>

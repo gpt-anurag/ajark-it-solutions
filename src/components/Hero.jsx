@@ -63,7 +63,6 @@ const Hero = () => {
             return (
               <CarouselItem key={item.id}>
                 <div className='relative w-screen h-screen overflow-hidden bg-black'>
-                  {/* <p className='bg-black text-white z-50'>{item.id}</p> */}
                   <Image
                     src={item.link}
                     alt='hero image'
@@ -76,7 +75,6 @@ const Hero = () => {
             )
           })}
         </CarouselContent>
-        {/* <Button onClick={onCardClick}>jaskdjflk;asjdfkl</Button> */}
       </Carousel>
 
       <FeaturedServices onCardClick={onCardClick} />

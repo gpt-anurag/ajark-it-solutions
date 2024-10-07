@@ -34,15 +34,17 @@ const data = [
 const Stats = () => {
   return (
     <section className='bg-[#f7f7f7]'>
-      <div className='w-2/3 my-0  py-12 mx-auto flex justify-between'>
+      <div className='w-2/3 my-0  py-12 mx-auto flex sm:flex-row flex-col sm:gap-0 gap-14 justify-between'>
         {data.map((item) => {
           return (
             <div key={item.id} className='flex flex-col items-center gap-4'>
-              <p className='text-4xl'>{item.icon}</p>
+              <p className='sm:text-4xl text-6xl'>{item.icon}</p>
               <p className='text-5xl text-brand font-bold'>
                 {item.stat_number}
               </p>
-              <p className='text-lg font-semibold'>{item.stat_type}</p>
+              <p className='sm:text-lg text-2xl font-semibold'>
+                {item.stat_type}
+              </p>
             </div>
           )
         })}
