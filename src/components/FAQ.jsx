@@ -83,7 +83,7 @@ const FAQ = () => {
           <span className="font-bold">ASK US </span>ANYTHING
         </h2>
         <div className="flex flex-col justify-around gap-8 sm:flex-row">
-          <div className="flex basis-1/2 flex-col gap-4 rounded bg-red-400/30 p-4">
+          <div className="flex h-fit basis-1/2 flex-col gap-4 rounded bg-red-400/30 p-4">
             <div className="text-center text-2xl font-bold text-red-400">
               Students
             </div>
@@ -92,28 +92,26 @@ const FAQ = () => {
               .filter((item) => item.question_type === "student")
               .map((item) => {
                 return (
-                  <>
-                    <Accordion
-                      key={item.id}
-                      type="single"
-                      collapsible
-                      className="w-full"
+                  <Accordion
+                    key={item.id}
+                    type="single"
+                    collapsible
+                    className="w-full"
+                  >
+                    <AccordionItem
+                      value="item-1"
+                      className={`rounded border bg-white px-4 py-2 shadow`}
                     >
-                      <AccordionItem
-                        value="item-1"
-                        className={`rounded border bg-white px-4 py-2 shadow`}
-                      >
-                        <AccordionTrigger className="text-left font-semibold">
-                          {item.question}
-                        </AccordionTrigger>
-                        <AccordionContent>{item.answer}</AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </>
+                      <AccordionTrigger className="text-left font-semibold">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent>{item.answer}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 );
               })}
           </div>
-          <div className="flex basis-1/2 flex-col gap-4 rounded bg-green-400/30 p-4">
+          <div className="flex h-fit basis-1/2 flex-col gap-4 rounded bg-green-400/30 p-4">
             <div className="text-center text-2xl font-bold text-green-400">
               Clients
             </div>
@@ -121,24 +119,22 @@ const FAQ = () => {
               .filter((item) => item.question_type === "client")
               .map((item) => {
                 return (
-                  <>
-                    <Accordion
-                      key={item.id}
-                      type="single"
-                      collapsible
-                      className=""
+                  <Accordion
+                    key={item.id}
+                    type="single"
+                    collapsible
+                    className=""
+                  >
+                    <AccordionItem
+                      value="item-1"
+                      className={`rounded border bg-white px-4 py-2 shadow`}
                     >
-                      <AccordionItem
-                        value="item-1"
-                        className={`rounded border bg-white px-4 py-2 shadow`}
-                      >
-                        <AccordionTrigger className="text-left font-semibold">
-                          {item.question}
-                        </AccordionTrigger>
-                        <AccordionContent>{item.answer}</AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </>
+                      <AccordionTrigger className="text-left font-semibold">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent>{item.answer}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 );
               })}
           </div>

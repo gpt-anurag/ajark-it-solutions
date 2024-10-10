@@ -34,7 +34,7 @@ const CallToMeet = () => {
           height="400px"
           style={{ border: "0px" }}
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
           className="rounded"
         ></iframe>
       </div>
