@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div className="absolute z-10 w-full text-xl font-semibold text-white">
-      <div className="mx-auto my-0 flex justify-end px-4 py-8 sm:w-2/3 sm:px-0 sm:2xl:w-4/5">
+      <div className="mx-auto my-0 flex justify-between px-4 py-8 md:w-2/3 md:px-0 md:2xl:w-4/5">
         <Link href="/" className="text-4xl">
           AJARK
         </Link>
@@ -44,7 +44,9 @@ const Navbar = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href={"/services"}>About</Link>
+                <Link href={"/#about-section"} scroll={true}>
+                  About
+                </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className="relative">
@@ -74,8 +76,10 @@ const Navbar = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <Button className="bg-brand font-semibold text-green-950">
-              Contact Us
+            <Button className="bg-brand font-semibold text-green-950" asChild>
+              <Link href={"/#contact-section"} scroll={true}>
+                Contact Us
+              </Link>
             </Button>
           </NavigationMenuList>
         </NavigationMenu>

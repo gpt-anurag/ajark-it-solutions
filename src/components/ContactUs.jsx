@@ -7,7 +7,7 @@ import ContactUsForm from "./ContactUsForm";
 
 const ContactUs = () => {
   return (
-    <div className="bg-[#f6f9fd] text-black/80">
+    <div className="bg-[#f6f9fd] text-black/80" id="contact-section">
       <div className="mx-auto my-0 flex flex-col gap-4 p-8 sm:w-2/3 sm:py-16 2xl:w-4/5">
         <div className="flex items-center gap-3">
           <span className="font-bold uppercase text-black/30">Contact</span>
