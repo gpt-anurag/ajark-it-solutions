@@ -83,7 +83,7 @@ const FAQ = () => {
           <span className="font-bold">ASK US </span>ANYTHING
         </h2>
         <div className="flex flex-col justify-around gap-8 sm:flex-row">
-          <div className="flex h-fit basis-1/2 flex-col gap-4 rounded bg-red-400/30 p-4">
+          <div className="flex basis-1/2 flex-col gap-4 rounded bg-red-400/30 p-4">
             <div className="text-center text-2xl font-bold text-red-400">
               Students
             </div>
@@ -111,7 +111,7 @@ const FAQ = () => {
                 );
               })}
           </div>
-          <div className="flex h-fit basis-1/2 flex-col gap-4 rounded bg-green-400/30 p-4">
+          <div className="flex basis-1/2 flex-col gap-4 rounded bg-green-400/30 p-4">
             <div className="text-center text-2xl font-bold text-green-400">
               Clients
             </div>

@@ -7,7 +7,7 @@ import ContactUsForm from "./ContactUsForm";
 
 const ContactUs = () => {
   return (
-    <div className="bg-[#f6f9fd] text-black/80">
+    <div className="bg-[#f6f9fd] text-black/80" id="contact-section">
       <div className="mx-auto my-0 flex flex-col gap-4 p-8 sm:w-2/3 sm:py-16 2xl:w-4/5">
         <div className="flex items-center gap-3">
           <span className="font-bold uppercase text-black/30">Contact</span>
@@ -35,7 +35,7 @@ const ContactUs = () => {
               Kondapur, Hyderabad - 500081
             </p>
           </div>
-          <div className="flex flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4">
+          <div className="flex h-fit flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4">
             <a href="mailto:info@ajarkitsolutions.com?cc=accounts@ajarkitsolutions.com&subject=Enquiry to Connect with AJARK IT Solutions">
               <div className="mb-2 rounded-full border p-4 text-3xl text-brand hover:bg-brand/30">
                 <BiEnvelope />
@@ -44,7 +44,7 @@ const ContactUs = () => {
             <h4 className="mb-4 text-2xl font-semibold text-brand">Email</h4>
             <p>info@example.com</p>
           </div>
-          <div className="flex flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4">
+          <div className="flex h-fit flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4">
             <a href="tel:+91630194972">
               <div className="mb-2 rounded-full border p-4 text-3xl text-brand hover:bg-brand/30">
                 <FiPhoneCall />

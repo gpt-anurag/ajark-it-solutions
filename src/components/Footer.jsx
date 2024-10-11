@@ -34,11 +34,15 @@ const Footer = () => {
           <div className="mb-4">
             <h2 className="text-3xl font-bold">AJARK</h2>
             <br />
-            A108 Adam Street <br />
-            New York, NY 535022 <br />
+            <p>
+              12th Floor, Workafella, Western Aqua Building, <br /> Opp Tech
+              Mahindra, Kondapur,
+              <br />
+              Hyderabad - 500081
+            </p>
             <br />
             <p>
-              <span className="font-semibold">Phone:</span> +123 3243 45
+              <span className="font-semibold">Phone:</span> +91 630194972
             </p>
             <p>
               <span className="font-semibold">Email:</span> info@example.com
