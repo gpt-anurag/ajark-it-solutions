@@ -3,8 +3,8 @@ import React from "react";
 const CallToMeet = () => {
   return (
     <section className="bg-[#11423c] text-xl text-white">
-      <div className="mx-auto my-0 flex flex-col items-center gap-12 px-6 pb-24 pt-8 sm:w-2/3 sm:pt-12">
-        <h3 className="text-4xl font-thin">
+      <div className="mx-auto my-0 flex flex-col items-center gap-12 px-6 pb-24 pt-8 md:w-11/12 md:pt-12 lg:w-4/5 lg:px-0">
+        <h3 className="text-center text-4xl font-thin">
           <span className="font-bold">Let’s Connect</span> in Person (put pulse
           animation)
         </h3>

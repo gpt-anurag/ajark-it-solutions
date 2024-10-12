@@ -72,7 +72,7 @@ const data = [
 const FAQ = () => {
   return (
     <div className="bg-[#f7f7f7] text-black">
-      <div className="mx-auto my-0 flex flex-col gap-4 p-4 sm:w-2/3 sm:px-0 sm:py-16 2xl:w-4/5">
+      <div className="mx-auto my-0 flex flex-col gap-4 p-4 md:w-11/12 md:px-0 md:py-16 2xl:w-4/5">
         <div className="flex items-center gap-3">
           <span className="font-bold uppercase text-black/30">
             Frequently Asked Questions
@@ -82,7 +82,7 @@ const FAQ = () => {
         <h2 className="mb-8 text-4xl">
           <span className="font-bold">ASK US </span>ANYTHING
         </h2>
-        <div className="flex flex-col justify-around gap-8 sm:flex-row">
+        <div className="flex flex-col justify-around gap-8 md:flex-row">
           <div className="flex basis-1/2 flex-col gap-4 rounded bg-red-400/30 p-4">
             <div className="text-center text-2xl font-bold text-red-400">
               Students
@@ -96,7 +96,7 @@ const FAQ = () => {
                     key={item.id}
                     type="single"
                     collapsible
-                    className="w-full"
+                    className=""
                   >
                     <AccordionItem
                       value="item-1"

@@ -30,7 +30,7 @@ export const featured_services_data = [
 const FeaturedServices = ({ onCardClick }) => {
   return (
     <section className="absolute bottom-0 bg-[#060606]/50 text-white">
-      <div className="mx-auto my-0 flex flex-col justify-between gap-0 py-0 sm:w-2/3 sm:flex-row sm:py-10 sm:2xl:w-4/5">
+      <div className="mx-auto my-0 flex flex-col justify-between gap-0 py-8 md:w-11/12 md:flex-row md:py-10 2xl:w-4/5">
         {featured_services_data.map((item) => {
           return (
             <div
@@ -40,7 +40,7 @@ const FeaturedServices = ({ onCardClick }) => {
               }}
               className={`flex cursor-pointer gap-4 p-4 hover:bg-white/10 ${
                 item.id === 2
-                  ? "border-2 border-x-0 border-white/30 sm:border sm:border-y-0"
+                  ? "border-2 border-x-0 border-white/30 md:border md:border-y-0"
                   : ""
               }`}
             >

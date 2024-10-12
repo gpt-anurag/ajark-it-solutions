@@ -29,8 +29,8 @@ const socials = [
 const Footer = () => {
   return (
     <div className="bg-[#060606] text-white">
-      <div className="mx-auto my-0 flex flex-col justify-between gap-10 px-8 py-8 sm:w-2/3 sm:flex-row sm:px-0 2xl:w-4/5">
-        <div className="order-2 flex flex-col justify-between border-t border-white/30 py-4 sm:order-1 sm:border-0">
+      <div className="mx-auto my-0 flex flex-col justify-between gap-10 px-8 py-8 md:w-11/12 md:flex-row md:px-0 2xl:w-4/5">
+        <div className="order-2 flex flex-col justify-between border-t border-white/30 py-4 md:order-1 md:border-0">
           <div className="mb-4">
             <h2 className="text-3xl font-bold">AJARK</h2>
             <br />
@@ -48,7 +48,7 @@ const Footer = () => {
               <span className="font-semibold">Email:</span> info@example.com
             </p>
           </div>
-          <div className="flex gap-2 sm:justify-around">
+          <div className="flex gap-2 sm:justify-start">
             {socials.map((item) => {
               return (
                 <div
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 sm:order-2 sm:flex-row">
+        <div className="flex gap-10 sm:flex-col md:order-2 md:flex-row">
           <div className="">
             <h5 className="mb-2 font-semibold">Useful Links</h5>
             <ul className="ml-2">
@@ -97,7 +97,7 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div className="hidden rounded sm:block">
+          <div className="hidden rounded lg:block">
             <h5 className="mb-2 font-semibold">In Person Meeting</h5>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60898.52405920879!2d78.36947000000002!3d17.452162!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb931fa7aa6827%3A0x77727cd7075984e1!2sWorkafella%20Western%20Aqua%2C%20HiTech%20City!5e0!3m2!1sen!2sus!4v1727582024888!5m2!1sen!2sus"

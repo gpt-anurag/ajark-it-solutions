@@ -34,7 +34,7 @@ const data = [
 const Stats = () => {
   return (
     <section className="bg-[#f7f7f7]">
-      <div className="mx-auto my-0 flex w-2/3 flex-col justify-between gap-14 py-12 sm:flex-row sm:gap-0">
+      <div className="mx-auto my-0 grid w-2/3 grid-cols-1 justify-between gap-14 py-12 sm:grid-cols-2 sm:gap-10 md:w-11/12 md:grid-cols-4">
         {data.map((item) => {
           return (
             <div key={item.id} className="flex flex-col items-center gap-4">
@@ -42,7 +42,7 @@ const Stats = () => {
               <p className="text-5xl font-bold text-brand">
                 {item.stat_number}
               </p>
-              <p className="text-2xl font-semibold sm:text-lg">
+              <p className="text-2xl font-semibold sm:text-lg md:text-base">
                 {item.stat_type}
               </p>
             </div>

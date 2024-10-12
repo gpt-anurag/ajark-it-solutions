@@ -50,7 +50,7 @@ const data = [
 const Services = () => {
   return (
     <div className="text-black">
-      <div className="mx-auto my-0 flex flex-col gap-4 p-8 sm:w-2/3 sm:px-0 sm:py-16 2xl:w-4/5">
+      <div className="mx-auto my-0 flex flex-col gap-4 p-8 md:w-11/12 md:px-0 md:py-16 2xl:w-4/5">
         <div className="flex items-center gap-3">
           <span className="font-bold text-black/30">SERVICES</span>
           <div className="h-[0.5px] w-40 bg-red-600"></div>
