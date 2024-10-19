@@ -99,13 +99,15 @@ const FAQ = () => {
                     className=""
                   >
                     <AccordionItem
-                      value="item-1"
+                      value={`item-${item.id}`}
                       className={`rounded border bg-white px-4 py-2 shadow`}
                     >
-                      <AccordionTrigger className="text-left font-semibold">
+                      <AccordionTrigger className="text-left text-lg font-semibold">
                         {item.question}
                       </AccordionTrigger>
-                      <AccordionContent>{item.answer}</AccordionContent>
+                      <AccordionContent className="text-lg">
+                        {item.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 );
@@ -129,10 +131,12 @@ const FAQ = () => {
                       value="item-1"
                       className={`rounded border bg-white px-4 py-2 shadow`}
                     >
-                      <AccordionTrigger className="text-left font-semibold">
+                      <AccordionTrigger className="text-left text-lg font-semibold">
                         {item.question}
                       </AccordionTrigger>
-                      <AccordionContent>{item.answer}</AccordionContent>
+                      <AccordionContent className="text-lg">
+                        {item.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 );
