@@ -13,16 +13,12 @@ import Link from "next/link";
 
 const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
   const path = usePathname();
-  const searchParams = useSearchParams();
-  const search = searchParams.get("q");
-  const router = useRouter();
 
-  const [currentTab, setCurrentTab] = useState(0);
+  console.log(path);
 
-  useEffect(() => {
-    setCurrentTab(parseInt(search));
-    router.push(`${path}?q=${search}`)
-  }, [search]);
+  const handleClick = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <section
@@ -31,7 +27,9 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
       }`}
     >
       <div className="flex justify-between p-8">
-        <div>AJARK</div>
+        <Link href="/" className="text-4xl" onClick={handleClick}>
+          AJARK
+        </Link>
 
         <div className="text-5xl text-red-600 hover:text-red-900">
           <IoClose onClick={() => setIsSidebarOpen(false)} />
@@ -40,15 +38,23 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
 
       <div className="px-4">
         <ul className="flex cursor-pointer flex-col gap-0 text-2xl text-black/30">
-          <li className={`rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60 ${path==='/' && 'bg-brand/30'}`}>
-          <Link href={"/"}>Home</Link>
+          <li
+            className={`rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60 ${path === "/" && "bg-brand/30"}`}
+          >
+            <Link href={"/"} onClick={handleClick}>
+              Home
+            </Link>
           </li>
           <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
-            About
+            <Link href={"/#about-section"} onClick={handleClick}>
+              About
+            </Link>
           </li>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-b-0">
-              <AccordionTrigger className="rounded p-2 text-2xl text-black/40 hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:bg-brand data-[state=open]:font-bold data-[state=open]:text-black">
+              <AccordionTrigger
+                className={`rounded p-2 text-2xl text-black/40 hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:bg-brand data-[state=open]:font-bold data-[state=open]:text-black ${path === "/services" && "data-[state=close]:bg-brand data-[state=open]:bg-brand data-[state=close]:font-bold data-[state=open]:font-bold data-[state=close]:text-black data-[state=open]:text-black"}`}
+              >
                 <Link href={"/services?q=1"} className="">
                   All Services
                 </Link>
@@ -60,21 +66,34 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                       Trainings
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="ml-8 flex flex-col gap-0 text-lg" onClick={()=> setIsSidebarOpen(!isSidebarOpen)}>
+                      <ul
+                        className="ml-8 flex flex-col gap-0 text-lg"
+                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                      >
                         <li className="rounded p-2 hover:text-black">
-                        <Link href={"/services?q=0"}>Soft Skills</Link>
+                          <Link href={"/services?q=0"} onClick={handleClick}>
+                            Soft Skills
+                          </Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                        <Link href={"/services?q=1"}>FrontEnd</Link>
+                          <Link href={"/services?q=1"} onClick={handleClick}>
+                            FrontEnd
+                          </Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                        <Link href={"/services?q=2"}>BackEnd</Link>
+                          <Link href={"/services?q=2"} onClick={handleClick}>
+                            BackEnd
+                          </Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                        <Link href={"/services?q=3"}>Cloud</Link>
+                          <Link href={"/services?q=3"} onClick={handleClick}>
+                            Cloud
+                          </Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                        <Link href={"/services?q=4"}>Testing</Link>
+                          <Link href={"/services?q=4"} onClick={handleClick}>
+                            Testing
+                          </Link>
                         </li>
                       </ul>
                     </AccordionContent>
@@ -104,7 +123,13 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
             </AccordionItem>
           </Accordion>
           <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
-            Contact Us
+            <Link
+              href={"/#contact-section"}
+              scroll={true}
+              onClick={handleClick}
+            >
+              Contact Us
+            </Link>
           </li>
         </ul>
       </div>

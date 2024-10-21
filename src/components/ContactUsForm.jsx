@@ -5,17 +5,45 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 
 const ContactUsForm = () => {
+  const formUrl = "https://formspree.io/f/xjkvkyvw";
+
   // Initialize React Hook Form
   const {
     register, // Registers the inputs
     handleSubmit, // Handles form submission
+    reset,
     formState: { errors }, // Contains validation errors
   } = useForm();
 
   // Submit handler
-  const onSubmit = (data) => {
-    console.log(data);
-    // You can process or send the form data (e.g., via API)
+  const onSubmit = async (data) => {
+    const formUrl = "https://formspree.io/f/xjkvkyvw"; // Replace with your Formspree form URL
+
+    const formData = new FormData();
+    formData.append("email", data.email);
+    formData.append("name", data.name);
+    formData.append("phone", data.phone);
+    formData.append("subject", data.subject);
+    formData.append("message", data.message);
+
+    try {
+      const response = await fetch(formUrl, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+      } else {
+        alert("Form submission failed.");
+      }
+      reset();
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 gap-4">
@@ -120,7 +148,7 @@ const ContactUsForm = () => {
           Submit
         </button> */}
         <Button variant="secondary" className="w-full rounded bg-brand">
-          Button
+          Submit
         </Button>
       </div>
     </form>
