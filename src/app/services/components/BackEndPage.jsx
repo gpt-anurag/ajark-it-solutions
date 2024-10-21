@@ -11,7 +11,6 @@ const BackEndPage = () => {
             alt="spring icon"
             width={200}
             height={200}
-            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <figcaption className="mt-4 text-center text-4xl font-bold text-[#35550d]">
             Springboot
@@ -23,7 +22,6 @@ const BackEndPage = () => {
             alt="node icon"
             width={200}
             height={200}
-            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <figcaption className="mt-4 text-center text-4xl font-bold text-[#35550d]">
             Node

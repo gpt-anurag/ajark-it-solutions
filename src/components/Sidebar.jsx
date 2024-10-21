@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import {
   Accordion,
@@ -8,9 +8,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
-  const [accordionOpen, setAccordionOpen] = useState(true);
+  const path = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.get("q");
+  const router = useRouter();
+
+  const [currentTab, setCurrentTab] = useState(0);
+
+  useEffect(() => {
+    setCurrentTab(parseInt(search));
+    router.push(`${path}?q=${search}`)
+  }, [search]);
 
   return (
     <section
@@ -28,16 +40,18 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
 
       <div className="px-4">
         <ul className="flex cursor-pointer flex-col gap-0 text-2xl text-black/30">
-          <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
-            Home
+          <li className={`rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60 ${path==='/' && 'bg-brand/30'}`}>
+          <Link href={"/"}>Home</Link>
           </li>
           <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
             About
           </li>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-b-0">
-              <AccordionTrigger className="rounded p-2 text-2xl text-black/40 hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:bg-brand data-[state=open]:font-bold">
-                All Services
+              <AccordionTrigger className="rounded p-2 text-2xl text-black/40 hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:bg-brand data-[state=open]:font-bold data-[state=open]:text-black">
+                <Link href={"/services?q=1"} className="">
+                  All Services
+                </Link>
               </AccordionTrigger>
               <AccordionContent className="ml-4">
                 <Accordion type="single" collapsible className="w-full" asChild>
@@ -46,21 +60,21 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                       Trainings
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="ml-8 flex flex-col gap-0 text-lg">
+                      <ul className="ml-8 flex flex-col gap-0 text-lg" onClick={()=> setIsSidebarOpen(!isSidebarOpen)}>
                         <li className="rounded p-2 hover:text-black">
-                          Soft Sills
+                        <Link href={"/services?q=0"}>Soft Skills</Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          FrontEnd
+                        <Link href={"/services?q=1"}>FrontEnd</Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          BackEnd
+                        <Link href={"/services?q=2"}>BackEnd</Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          FullStack
+                        <Link href={"/services?q=3"}>Cloud</Link>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          Testing
+                        <Link href={"/services?q=4"}>Testing</Link>
                         </li>
                       </ul>
                     </AccordionContent>

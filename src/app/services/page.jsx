@@ -4,32 +4,40 @@ import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import FrontEndPage from "./components/FrontEndPage";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import BackEndPage from "./components/BackEndPage";
 import CloudPage from "./components/CloudPage";
 import TestingPage from "./components/TestingPage";
+import SoftSkills from "./components/SoftSkills";
+// import { useRouter } from "next/router";
 
 const service_data = [
   {
     id: 0,
+    title: "SoftSkills",
+    page: <SoftSkills />,
+    link_id: "softskills",
+  },
+  {
+    id: 1,
     title: "FrontEnd",
     page: <FrontEndPage />,
     link_id: "frontend",
   },
   {
-    id: 1,
+    id: 2,
     title: "BackEnd",
     page: <BackEndPage />,
     link_id: "backend",
   },
   {
-    id: 2,
+    id: 3,
     title: "Cloud",
     page: <CloudPage />,
     link_id: "cloud",
   },
   {
-    id: 3,
+    id: 4,
     title: "Testing",
     page: <TestingPage />,
     link_id: "testing",
@@ -37,13 +45,17 @@ const service_data = [
 ];
 
 const ServicesPage = () => {
+  const path = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.get("q");
+  const router = useRouter();
+
   const [currentTab, setCurrentTab] = useState(0);
 
-  const path = usePathname();
-
   useEffect(() => {
-    console.log(path);
-  });
+    setCurrentTab(parseInt(search));
+    router.push(`${path}?q=${search}`)
+  }, [search]);
 
   return (
     <main className="flex flex-col">
@@ -61,15 +73,15 @@ const ServicesPage = () => {
           </h1>
         </div>
       </div>
-      <div className="mx-auto my-0 min-h-[150vh] w-2/3 py-8 2xl:w-4/5">
+      <div className="mx-auto my-0 w-full lg:w-2/3 px-4 py-8 2xl:w-4/5">
         <section className="flex flex-col gap-8 lg:flex-row lg:gap-4 lg:text-xl">
           <div className="w-full lg:w-1/5">
-            <ul className="flex justify-between gap-4 border-r-4 p-4 font-semibold lg:flex-col">
+            <ul className="flex justify-between gap-4 lg:border-r-4 p-2 lg:p-4 font-semibold lg:flex-col">
               {service_data.map((item) => (
                 <li
                   key={item.id}
                   id={item.link_id}
-                  className={`cursor-pointer rounded border-l-[6px] px-4 py-6 pl-3 text-3xl ${
+                  className={`cursor-pointer rounded border-l-[6px] lg:px-4 lg:py-6 pl-3 text-lg lg:text-3xl ${
                     currentTab === item.id
                       ? "border-brand text-black"
                       : "border-black/10 text-black/40"
