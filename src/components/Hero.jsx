@@ -1,55 +1,50 @@
-'use client'
+"use client";
 
-import React, { useCallback } from 'react'
+import React from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  CarouselApi,
-} from '@/components/ui/carousel'
+} from "@/components/ui/carousel";
 import FeaturedServices, {
   featured_services_data as data,
-} from './FeaturedServices'
-import { Card, CardContent } from '@/components/ui/card'
-import Image from 'next/image'
-import Autoplay from 'embla-carousel-autoplay'
+} from "./FeaturedServices";
+import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
-import useEmblaCarousel from 'embla-carousel-react'
-import { Button } from '@/components/ui/button'
+import useEmblaCarousel from "embla-carousel-react";
 
 const image_links = [
   {
     id: 1,
-    link: '/img/hero-carousel/hero-carousel-1.jpg',
+    link: "/img/hero-carousel/hero-carousel-1.jpg",
   },
   {
     id: 2,
-    link: '/img/hero-carousel/hero-carousel-2.jpg',
+    link: "/img/hero-carousel/hero-carousel-2.jpg",
   },
   {
     id: 3,
-    link: '/img/hero-carousel/hero-carousel-3.jpg',
+    link: "/img/hero-carousel/hero-carousel-3.jpg",
   },
-]
+];
 
 const Hero = () => {
-  const [emblaApi] = useEmblaCarousel()
-  const [api, setApi] = React.useState(emblaApi)
+  const [emblaApi] = useEmblaCarousel();
+  const [api, setApi] = React.useState(emblaApi);
 
   React.useEffect(() => {
     if (!api) {
-      return
+      return;
     }
-  }, [api])
+  }, [api]);
 
   const onCardClick = (id) => {
     if (api) {
-      api.selectedScrollSnap()
-      api.scrollTo(id)
+      api.selectedScrollSnap();
+      api.scrollTo(id);
     }
-  }
+  };
 
   return (
     <>
@@ -62,26 +57,24 @@ const Hero = () => {
           {image_links.map((item) => {
             return (
               <CarouselItem key={item.id}>
-                <div className='relative w-screen h-screen overflow-hidden bg-black'>
-                  {/* <p className='bg-black text-white z-50'>{item.id}</p> */}
+                <div className="relative h-screen w-screen overflow-hidden bg-black">
                   <Image
                     src={item.link}
-                    alt='hero image'
+                    alt="hero image"
                     fill
-                    objectFit='cover'
-                    className='opacity-50'
+                    objectFit="cover"
+                    className="opacity-50"
                   />
                 </div>
               </CarouselItem>
-            )
+            );
           })}
         </CarouselContent>
-        {/* <Button onClick={onCardClick}>jaskdjflk;asjdfkl</Button> */}
       </Carousel>
 
       <FeaturedServices onCardClick={onCardClick} />
     </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

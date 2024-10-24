@@ -1,94 +1,130 @@
-'use client'
+"use client";
 
-import React from 'react'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import {
-  DropdownMenuGroup,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from '@radix-ui/react-dropdown-menu'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Sidebar from "./Sidebar";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { FaAngleDown } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
-  const pathname = usePathname()
-  // console.log(pathname)
-  return (
-    <div
-      // className={`${
-      //   pathname === '/' ? 'absolute text-white' : 'absolute text-black'
-      // } z-20 w-full  font-semibold text-xl`}
-      className='absolute text-white z-20 w-full  font-semibold text-xl'
-    >
-      <div className='w-2/3 2xl:w-4/5 my-0 mx-auto flex justify-between py-8 px-0'>
-        <a href='#' className='text-4xl'>
-          AJARK
-        </a>
-        <nav className='flex items-center'>
-          <ul className='flex flex-row gap-8'>
-            <li>
-              <Link href={'/'}>Home</Link>
-            </li>
-            <li>
-              <Link href={'/services'}>About</Link>
-            </li>
-            <li className=''>
-              <DropdownMenu className='bg-white text-black'>
-                <DropdownMenuTrigger>All Services</DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuGroup className='bg-white text-black'>
-                    <DropdownMenuSub>
-                      <DropdownMenuSubTrigger>Trainings</DropdownMenuSubTrigger>
-                      <DropdownMenuPortal>
-                        <DropdownMenuSubContent className='bg-white text-black'>
-                          <DropdownMenuItem>Soft Skills</DropdownMenuItem>
-                          <DropdownMenuItem>Frontend</DropdownMenuItem>
-                          <DropdownMenuItem>Backend</DropdownMenuItem>
-                          <DropdownMenuItem>FullStack</DropdownMenuItem>
-                          <DropdownMenuItem>Testing</DropdownMenuItem>
-                        </DropdownMenuSubContent>
-                      </DropdownMenuPortal>
-                    </DropdownMenuSub>
-                    <DropdownMenuSeparator className='text-black pb-[1px] bg-black' />
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [onMouseOverTrainings, setOnMouseOverTrainings] = useState(false);
+  const [onMouseOverCV, setOnMouseOverCV] = useState(false);
+  const path = usePathname();
 
-                    <DropdownMenuSub>
-                      <DropdownMenuSubTrigger>
-                        Resumes & CVs
-                      </DropdownMenuSubTrigger>
-                      <DropdownMenuPortal>
-                        <DropdownMenuSubContent className='bg-white text-black'>
-                          <DropdownMenuItem>CV Review</DropdownMenuItem>
-                          <DropdownMenuItem>CV Building</DropdownMenuItem>
-                          <DropdownMenuItem>
-                            Abroad CV Building
-                          </DropdownMenuItem>
-                        </DropdownMenuSubContent>
-                      </DropdownMenuPortal>
-                    </DropdownMenuSub>
-                    <DropdownMenuSeparator className='text-black pb-[1px] bg-black' />
-                    <DropdownMenuItem>Career Consultants</DropdownMenuItem>
-                    <DropdownMenuItem>Staffing</DropdownMenuItem>
-                    <DropdownMenuItem>Outsourcing</DropdownMenuItem>
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
+  return (
+    <div className="absolute top-0 z-10 w-full text-xl font-semibold text-white">
+      <div className="mx-auto my-0 flex max-w-screen-2xl justify-between px-8 py-8 md:w-11/12 md:px-0 md:text-xl 2xl:w-4/5">
+        <Link href="/" className="text-4xl">
+          <Image src={"/logo.png"} height={200} width={200} alt="logo" />
+        </Link>
+
+        {/* NavBar */}
+        <nav className="hidden md:block">
+          <ul className="flex gap-8">
+            <li className={`cursor-pointer ${path === "/" && "border-b-2"}`}>
+              <Link href={"/"}>Home</Link>
             </li>
-            <li>Contact US</li>
+            <li className={`cursor-pointer`}>
+              <Link href={"/#about-section"}>About</Link>
+            </li>
+            <li className="group relative">
+              <div className="mb-4 flex items-center gap-2">
+                <Link href={"/services?q=0"} className="">
+                  All Services
+                </Link>
+                <FaAngleDown />
+              </div>
+              <ul className="absolute flex hidden w-max flex-col gap-4 rounded bg-white p-4 text-black/50 group-hover:block">
+                <li className="cursor-pointer pb-4 hover:text-black">
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setOnMouseOverTrainings(true)}
+                    onMouseLeave={() => setOnMouseOverTrainings(false)}
+                  >
+                    <p>Trainings</p>
+                    {onMouseOverTrainings && (
+                      <ul className="absolute top-0 z-10 flex hidden w-max translate-x-32 flex-col gap-4 rounded border bg-white p-4 text-black/50 group-hover:block">
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/services?q=0"}>Soft Skills</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/services?q=1"}>FrontEnd</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/services?q=2"}>BackEnd</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/services?q=3"}>Cloud</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/services?q=4"}>Testing</Link>
+                        </li>
+                      </ul>
+                    )}
+                  </div>
+                </li>
+                <li className="cursor-pointer pb-4 hover:text-black">
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setOnMouseOverCV(true)}
+                    onMouseLeave={() => setOnMouseOverCV(false)}
+                  >
+                    <Link href={"/resume"}>Resume & CV&apos;s</Link>
+                    {onMouseOverCV && (
+                      <ul className="absolute top-0 z-10 flex hidden w-max translate-x-32 flex-col gap-4 rounded border bg-white p-4 text-black/50 group-hover:block">
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/resume"}>CV Review</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/resume"}>CV Building</Link>
+                        </li>
+                        <li className="cursor-pointer p-2 hover:text-black">
+                          <Link href={"/resume"}>Abroad CV Building</Link>
+                        </li>
+                      </ul>
+                    )}
+                  </div>
+                </li>
+                <li className="cursor-pointer pb-4 hover:text-black">
+                  <Link href={"/career-consulting"}>Career Consultants</Link>
+                </li>
+                <li className="cursor-pointer pb-4 hover:text-black">
+                  <Link href={"/staffing-outsourcing"}>
+                    Staffing & Oursourcing
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Button
+                className="bg-brand/80 text-xl font-semibold text-green-950 hover:bg-brand"
+                asChild
+              >
+                <Link href={"/#contact-section"} scroll={true}>
+                  Contact Us
+                </Link>
+              </Button>
+            </li>
           </ul>
         </nav>
+
+        <div className="cursor-pointer text-4xl md:hidden">
+          {isSidebarOpen ? (
+            <Sidebar
+              isSidebarOpen={isSidebarOpen}
+              setIsSidebarOpen={setIsSidebarOpen}
+            />
+          ) : (
+            <GiHamburgerMenu onClick={() => setIsSidebarOpen(true)} />
+          )}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
