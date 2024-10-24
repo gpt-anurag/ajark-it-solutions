@@ -3,7 +3,7 @@ import React from "react";
 const CallToMeet = () => {
   return (
     <section className="bg-[#11423c] text-xl text-white">
-      <div className="mx-auto my-0 flex flex-col items-center gap-12 px-6 pb-24 pt-8 md:w-11/12 md:pt-12 lg:w-4/5 lg:px-0">
+      <div className="mx-auto my-0 flex flex-col items-center gap-8 px-6 pb-20 pt-8 md:w-11/12 md:pt-12 lg:w-4/5 lg:px-0">
         <h3 className="text-center text-4xl font-thin">
           <span className="font-bold">Let’s Connect</span> in Person (put pulse
           animation)
@@ -11,21 +11,27 @@ const CallToMeet = () => {
         <div className="w-full text-center sm:w-3/5">
           At AJARK IT Solutions, we’re passionate about bridging the gap between
           education and industry in the IT sector.we ensure our aspirants are
-          well-prepared to meet the challenges of a dynamic workplace.
+          well-prepared to meet the challenges of a dynamic workplace
           <br />
           <br />
-          We invite you to visit our office to discover how we can work together
+          Let’s connect and explore the exciting opportunities that lie ahead!
         </div>
-        <div className="mb-8 grid grid-cols-1 items-center justify-between sm:grid-cols-12 sm:gap-5">
-          <p className="col-span-5 place-content-center text-center text-2xl">
-            whether you’re a student eager to kickstart your career
+        <div className="mb-4 grid grid-cols-1 items-center justify-around sm:grid-cols-7 sm:gap-5">
+          <p className="col-span-3 place-content-center text-right text-2xl">
+            Whether you’re a student eager to kickstart your career
           </p>
-          <h2 className="col-span-2 place-items-center text-center text-8xl">
+          <h2 className="col-span-1 place-items-center text-center text-6xl">
             or
           </h2>
-          <p className="col-span-5 place-content-center text-center text-2xl">
-            a client looking for skilled talent. Let’s connect and explore the
-            exciting opportunities that lie ahead!
+          <p className="col-span-3 place-content-center text-justify text-2xl">
+            A client looking for skilled talent. Serving to accomplish your
+            goals
+          </p>
+        </div>
+        <div>
+          <p>
+            We invite you to visit our office to discover how we can work
+            together
           </p>
         </div>
         <iframe

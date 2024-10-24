@@ -29,6 +29,15 @@ const CloudPage = () => {
           </figcaption>
         </figure>
       </div>
+      <div className="mt-10">
+        <p>
+          AWS and Azure are popular cloud platforms that help businesses store
+          data and run applications online. They offer tools for everything from
+          file storage to artificial intelligence, making it easy for companies
+          to grow and adapt. Harnessing these powerful tools helps organizations
+          streamline operations and drive growth in today’s digital landscape
+        </p>
+      </div>
     </section>
   );
 };

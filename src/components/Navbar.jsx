@@ -14,9 +14,8 @@ const Navbar = () => {
   const [onMouseOverCV, setOnMouseOverCV] = useState(false);
   const path = usePathname();
 
-
   return (
-    <div className="absolute z-10 w-full text-xl font-semibold text-white">
+    <div className="absolute top-0 z-10 w-full text-xl font-semibold text-white">
       <div className="mx-auto my-0 flex max-w-screen-2xl justify-between px-8 py-8 md:w-11/12 md:px-0 md:text-xl 2xl:w-4/5">
         <Link href="/" className="text-4xl">
           AJARK
@@ -25,19 +24,15 @@ const Navbar = () => {
         {/* NavBar */}
         <nav className="hidden md:block">
           <ul className="flex gap-8">
-            <li
-              className={`cursor-pointer ${path==='/' && 'border-b-2'}`}
-            >
+            <li className={`cursor-pointer ${path === "/" && "border-b-2"}`}>
               <Link href={"/"}>Home</Link>
             </li>
-            <li
-              className={`cursor-pointer`}
-            >
+            <li className={`cursor-pointer`}>
               <Link href={"/#about-section"}>About</Link>
             </li>
             <li className="group relative">
               <div className="mb-4 flex items-center gap-2">
-                <Link href={"/services?q=1"} className="">
+                <Link href={"/services?q=0"} className="">
                   All Services
                 </Link>
                 <FaAngleDown />
@@ -77,7 +72,7 @@ const Navbar = () => {
                     onMouseEnter={() => setOnMouseOverCV(true)}
                     onMouseLeave={() => setOnMouseOverCV(false)}
                   >
-                    <p>Resume & CV&apos;s</p>
+                    <Link href={"/resume"}>Resume & CV&apos;s</Link>
                     {onMouseOverCV && (
                       <ul className="absolute top-0 z-10 flex hidden w-max translate-x-32 flex-col gap-4 rounded border bg-white p-4 text-black/50 group-hover:block">
                         <li className="cursor-pointer p-2 hover:text-black">
@@ -97,13 +92,17 @@ const Navbar = () => {
                   <Link href={"/career-consulting"}>Career Consultants</Link>
                 </li>
                 <li className="cursor-pointer pb-4 hover:text-black">
-                  Staffing
+                  <Link href={"/staffing-outsourcing"}>
+                    Staffing & Oursourcing
+                  </Link>
                 </li>
-                <li className="cursor-pointer hover:text-black">Outsourcing</li>
               </ul>
             </li>
             <li>
-              <Button className="bg-brand font-semibold text-green-950" asChild>
+              <Button
+                className="bg-brand/80 text-xl font-semibold text-green-950 hover:bg-brand"
+                asChild
+              >
                 <Link href={"/#contact-section"} scroll={true}>
                   Contact Us
                 </Link>
@@ -119,7 +118,7 @@ const Navbar = () => {
               setIsSidebarOpen={setIsSidebarOpen}
             />
           ) : (
-            <GiHamburgerMenu onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+            <GiHamburgerMenu onClick={() => setIsSidebarOpen(true)} />
           )}
         </div>
       </div>

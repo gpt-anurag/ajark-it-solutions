@@ -9,21 +9,24 @@ import { BsBarChart } from "react-icons/bs";
 export const featured_services_data = [
   {
     id: 1,
-    icon: <BsBriefcase />,
-    title: "Lorem Ipsum",
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    icon: <BsBarChart />,
+    title: "Transformative Training",
+    description: `Equip yourself with in-demand skills through training designed for all skill levels, bridging the gap between education and real-world IT demands`,
+    service_link: "/services?q=0",
   },
   {
     id: 2,
     icon: <BsCardChecklist />,
-    title: "Lorem Ipsum",
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    title: "Internships & Placements",
+    description: `Jumpstart your career with our exclusive job placement services, connecting high-performing candidates with internships and job roles in leading companies`,
+    service_link: "/resume",
   },
   {
     id: 3,
-    icon: <BsBarChart />,
-    title: "Lorem Ipsum",
-    description: `Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident`,
+    icon: <BsBriefcase />,
+    title: "Staffing & Outsourcing",
+    description: `Meet your business goals with our expert staffing services, providing both emerging talent and experienced professionals to enhance your team’s capabilities`,
+    service_link: "/career-consulting",
   },
 ];
 
@@ -52,7 +55,10 @@ const FeaturedServices = ({ onCardClick }) => {
                   {item.title}
                 </h4>
                 <p className="text-white/80">{item.description}</p>
-                <Link href={"#"} className="text-white/70 hover:text-brand">
+                <Link
+                  href={item.service_link}
+                  className="text-white/70 hover:text-brand"
+                >
                   Learn More &rarr;
                 </Link>
               </div>

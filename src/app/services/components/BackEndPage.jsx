@@ -28,6 +28,15 @@ const BackEndPage = () => {
           </figcaption>
         </figure>
       </div>
+      <div className="mt-10">
+        <p>
+          Backend development powers the unseen parts of websites and
+          applications. It involves using languages like Spring Boot or Node.js
+          to manage databases and server operations. Mastering backend skills
+          ensures smooth functionality and data handling, creating a seamless
+          experience for users everywhere.
+        </p>
+      </div>
     </section>
   );
 };

@@ -11,13 +11,13 @@ import {
 const data = [
   {
     id: 1,
-    icon: <BsBriefcase />,
+    icon: <BsCalendar4Week />,
     title: "Skill Development Workshops",
     description: ` Offer workshops focused on essential skills (technical, soft skills, and industry-specific knowledge) to prepare freshers for real-world challenges`,
   },
   {
     id: 2,
-    icon: <BsCardChecklist />,
+    icon: <BsSun />,
     title: "Mentorship and Coaching",
     description: ` Connect students with experienced professionals for personalized guidance, helping them navigate their careers and develop industry-specific knowledge`,
   },
@@ -29,19 +29,19 @@ const data = [
   },
   {
     id: 4,
-    icon: <BsBinoculars />,
+    icon: <BsBriefcase />,
     title: "Internship Placement Programs",
     description: `Facilitate internship opportunities with MNCs, allowing freshers to gain hands-on experience while companies benefit from fresh perspectives`,
   },
   {
     id: 5,
-    icon: <BsSun />,
+    icon: <BsCardChecklist />,
     title: "Resume Building and Interview Guidance",
     description: `Offer services that assist students in crafting impactful resumes and preparing for interviews, making them more competitive in the job market`,
   },
   {
     id: 6,
-    icon: <BsCalendar4Week />,
+    icon: <BsBinoculars />,
     title: "Talent Outsourcing Solutions for Clients",
     description: `Provide MNCs with access to a pool of trained, enthusiastic freshers, tailored to meet their specific project needs while ensuring quality and reliability`,
   },

@@ -4,7 +4,7 @@ import React from "react";
 const FrontEndPage = () => {
   return (
     <section className="">
-      <div className="flex w-full justify-center gap-20">
+      <div className="flex w-full justify-center gap-10">
         <figure className="flex flex-col justify-between">
           <Image
             src={"/react-2.svg"}
@@ -29,16 +29,13 @@ const FrontEndPage = () => {
         </figure>
       </div>
 
-      <div>
+      <div className="mt-10">
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi velit
-          harum dicta iure! Magnam, impedit. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Repudiandae deserunt odio voluptatum
-          reprehenderit cum nam numquam facilis quidem dolorum, delectus ab
-          harum sit id ex neque, minima quas exercitationem velit sequi! Autem
-          sapiente cupiditate error expedita, saepe incidunt quibusdam sunt,
-          magni eveniet iusto voluptas distinctio laboriosam officia inventore
-          nostrum? Non!
+          Frontend development focuses on creating the visual part of websites
+          and applications using HTML, CSS, and JavaScript. With frameworks like
+          React and Angular, you can build dynamic, user-friendly interfaces.
+          Mastering these tools allows you to bring ideas to life, ensuring
+          engaging user experiences
         </p>
       </div>
     </section>

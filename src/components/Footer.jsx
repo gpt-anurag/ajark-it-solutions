@@ -6,17 +6,17 @@ import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
 const useful_links = [
-  { id: 1, link: "Home", href: "#" },
-  { id: 2, link: "About us", href: "#" },
-  { id: 3, link: "Services", href: "/services" },
+  { id: 1, link: "Home", href: "/" },
+  { id: 2, link: "About us", href: "/#about-section" },
+  { id: 3, link: "Services", href: "/services?q=0" },
   { id: 4, link: "Terms of service", href: "#" },
   { id: 5, link: "Privacy policy", href: "#" },
 ];
 const services_links = [
-  { id: 1, link: "Web Design" },
-  { id: 2, link: "Training" },
-  { id: 3, link: "Career Consultants" },
-  { id: 4, link: "CV Review" },
+  { id: 1, title: "Trainings", href: "/services?q=0" },
+  { id: 2, title: "Resume & CV's", href: "/resume" },
+  { id: 3, title: "Career Consultants", href: "/career-consulting" },
+  { id: 4, title: "Staffing & Outsourcing", href: "/staffing-outsourcing" },
 ];
 
 const socials = [
@@ -45,7 +45,8 @@ const Footer = () => {
               <span className="font-semibold">Phone:</span> +91 630194972
             </p>
             <p>
-              <span className="font-semibold">Email:</span> info@example.com
+              <span className="font-semibold">Email:</span>{" "}
+              info@ajarkitsolutions.com
             </p>
           </div>
           <div className="flex gap-2 sm:justify-start">
@@ -90,8 +91,10 @@ const Footer = () => {
                     key={item.id}
                     className="mb-2 cursor-pointer text-white/60 hover:text-white/80"
                   >
-                    <span className="font-semibold text-brand">&#62;</span>{" "}
-                    {item.link}
+                    <Link href={item.href}>
+                      <span className="font-semibold text-brand">&#62;</span>{" "}
+                      {item.title}
+                    </Link>
                   </li>
                 );
               })}

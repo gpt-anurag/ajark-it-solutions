@@ -28,6 +28,15 @@ const TestingPage = () => {
           </figcaption>
         </figure>
       </div>
+      <div className="mt-10">
+        <p>
+          Testing is vital for delivering high-quality software. Tools like
+          Playwright and Selenium automate the testing process, enabling
+          developers to catch bugs early. With these powerful tools, you can
+          ensure your applications run smoothly, enhancing user satisfaction and
+          boosting overall performance.
+        </p>
+      </div>
     </section>
   );
 };

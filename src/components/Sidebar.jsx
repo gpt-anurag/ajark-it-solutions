@@ -13,8 +13,7 @@ import Link from "next/link";
 
 const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
   const path = usePathname();
-
-  console.log(path);
+  const router = useRouter();
 
   const handleClick = () => {
     setIsSidebarOpen(false);
@@ -55,7 +54,7 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
               <AccordionTrigger
                 className={`rounded p-2 text-2xl text-black/40 hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:bg-brand data-[state=open]:font-bold data-[state=open]:text-black ${path === "/services" && "data-[state=close]:bg-brand data-[state=open]:bg-brand data-[state=close]:font-bold data-[state=open]:font-bold data-[state=close]:text-black data-[state=open]:text-black"}`}
               >
-                <Link href={"/services?q=1"} className="">
+                <Link href={"/services?q=0"} className="">
                   All Services
                 </Link>
               </AccordionTrigger>
@@ -68,32 +67,35 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                     <AccordionContent>
                       <ul
                         className="ml-8 flex flex-col gap-0 text-lg"
-                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                        onClick={() => {
+                          setIsSidebarOpen(!isSidebarOpen);
+                          handleClick();
+                        }}
                       >
                         <li className="rounded p-2 hover:text-black">
-                          <Link href={"/services?q=0"} onClick={handleClick}>
+                          <p onClick={() => router.push(`/services?q=0`)}>
                             Soft Skills
-                          </Link>
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <Link href={"/services?q=1"} onClick={handleClick}>
-                            FrontEnd
-                          </Link>
+                          <p onClick={() => router.push(`/services?q=1`)}>
+                            Frontend
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <Link href={"/services?q=2"} onClick={handleClick}>
-                            BackEnd
-                          </Link>
+                          <p onClick={() => router.push(`/services?q=2`)}>
+                            Backend
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <Link href={"/services?q=3"} onClick={handleClick}>
+                          <p onClick={() => router.push(`/services?q=3`)}>
                             Cloud
-                          </Link>
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <Link href={"/services?q=4"} onClick={handleClick}>
+                          <p onClick={() => router.push(`/services?q=4`)}>
                             Testing
-                          </Link>
+                          </p>
                         </li>
                       </ul>
                     </AccordionContent>
