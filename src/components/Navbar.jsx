@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaAngleDown } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
     <div className="absolute top-0 z-10 w-full text-xl font-semibold text-white">
       <div className="mx-auto my-0 flex max-w-screen-2xl justify-between px-8 py-8 md:w-11/12 md:px-0 md:text-xl 2xl:w-4/5">
         <Link href="/" className="text-4xl">
-          AJARK
+          <Image src={"/logo.png"} height={200} width={200} alt="logo" />
         </Link>
 
         {/* NavBar */}
@@ -76,13 +77,13 @@ const Navbar = () => {
                     {onMouseOverCV && (
                       <ul className="absolute top-0 z-10 flex hidden w-max translate-x-32 flex-col gap-4 rounded border bg-white p-4 text-black/50 group-hover:block">
                         <li className="cursor-pointer p-2 hover:text-black">
-                          CV Review
+                          <Link href={"/resume"}>CV Review</Link>
                         </li>
                         <li className="cursor-pointer p-2 hover:text-black">
-                          CV Building
+                          <Link href={"/resume"}>CV Building</Link>
                         </li>
                         <li className="cursor-pointer p-2 hover:text-black">
-                          Abroad CV Building
+                          <Link href={"/resume"}>Abroad CV Building</Link>
                         </li>
                       </ul>
                     )}

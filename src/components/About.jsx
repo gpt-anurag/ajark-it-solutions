@@ -71,7 +71,7 @@ const About = () => {
             className="rounded-md bg-brand px-3 py-4 font-bold text-white hover:bg-brand/60"
             asChild
           >
-            <Link href={"/services"}>Learn More</Link>
+            <Link href={"/career-consulting"}>Learn More</Link>
           </Button>
         </div>
       </div>

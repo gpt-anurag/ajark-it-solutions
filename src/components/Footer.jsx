@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsTwitterX } from "react-icons/bs";
@@ -32,11 +33,13 @@ const Footer = () => {
       <div className="mx-auto my-0 flex flex-col justify-between gap-10 px-8 py-8 md:w-11/12 md:flex-row md:px-0 2xl:w-4/5">
         <div className="order-2 flex flex-col justify-between border-t border-white/30 py-4 md:order-1 md:border-0">
           <div className="mb-4">
-            <h2 className="text-3xl font-bold">AJARK</h2>
+            <h2 className="text-3xl font-bold">
+              <Image src={"/logo.png"} height={200} width={200} alt="logo" />
+            </h2>
             <br />
             <p>
               12th Floor, Workafella, Western Aqua Building, <br /> Opp Tech
-              Mahindra, Kondapur,
+              Mahindra, HITEC City, Kondapur,
               <br />
               Hyderabad - 500081
             </p>

@@ -104,18 +104,26 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 <Accordion type="single" collapsible className="w-full" asChild>
                   <AccordionItem value="item-3" className="border-b-0">
                     <AccordionTrigger className="rounded p-2 text-xl hover:bg-brand/30 hover:font-bold hover:text-black data-[state=open]:font-bold data-[state=open]:text-black">
-                      Resume & CV
+                      <p onClick={() => router.push(`/resume`)}>
+                        Resume & CV&apos;s
+                      </p>
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="ml-8 flex flex-col gap-0 text-lg">
                         <li className="rounded p-2 hover:text-black">
-                          CV Review
+                          <p onClick={() => router.push(`/resume`)}>
+                            CV Review
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          CV Building
+                          <p onClick={() => router.push(`/resume`)}>
+                            CV Building
+                          </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          Abroad CV Building
+                          <p onClick={() => router.push(`/resume`)}>
+                            Abroad CV Building
+                          </p>
                         </li>
                       </ul>
                     </AccordionContent>

@@ -4,7 +4,7 @@ import React from "react";
 const FrontEndPage = () => {
   return (
     <section className="">
-      <div className="flex w-full justify-center gap-10">
+      <div className="flex w-full justify-center gap-16">
         <figure className="flex flex-col justify-between">
           <Image
             src={"/react-2.svg"}
@@ -30,7 +30,7 @@ const FrontEndPage = () => {
       </div>
 
       <div className="mt-10">
-        <p>
+        <p className="text-justify">
           Frontend development focuses on creating the visual part of websites
           and applications using HTML, CSS, and JavaScript. With frameworks like
           React and Angular, you can build dynamic, user-friendly interfaces.

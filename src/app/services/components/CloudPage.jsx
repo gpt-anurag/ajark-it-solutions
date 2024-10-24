@@ -30,7 +30,7 @@ const CloudPage = () => {
         </figure>
       </div>
       <div className="mt-10">
-        <p>
+        <p className="text-justify">
           AWS and Azure are popular cloud platforms that help businesses store
           data and run applications online. They offer tools for everything from
           file storage to artificial intelligence, making it easy for companies

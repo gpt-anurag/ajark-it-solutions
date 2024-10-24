@@ -13,7 +13,7 @@ const PageBanner = ({ children, title }) => {
           className="opacity-60"
         />
         <div className="absolute flex h-full w-full items-center justify-center">
-          <h1 className="text-4xl font-bold uppercase text-white/70 sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-wrap text-center text-5xl font-bold uppercase text-white/70 sm:text-5xl md:text-6xl lg:text-7xl">
             {title}
           </h1>
         </div>

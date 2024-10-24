@@ -57,7 +57,7 @@ const FeaturedServices = ({ onCardClick }) => {
                 <p className="text-white/80">{item.description}</p>
                 <Link
                   href={item.service_link}
-                  className="text-white/70 hover:text-brand"
+                  className="font-bold text-white/70 hover:text-brand"
                 >
                   Learn More &rarr;
                 </Link>

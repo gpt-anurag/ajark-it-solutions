@@ -32,7 +32,7 @@ const ContactUs = () => {
             </h4>
             <p className="text-center">
               12th Floor, Workafella, Western Aqua Building, Opp Tech Mahindra,
-              Kondapur, HiTech City, Hyderabad - 500081
+              Kondapur, HITEC City, Hyderabad - 500081
             </p>
           </div>
           <div className="flex h-fit flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-7 sm:col-end-13 sm:row-start-1 sm:row-end-2 lg:col-start-1 lg:col-end-4 lg:row-start-2 lg:row-end-3 2xl:h-auto">

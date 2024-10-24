@@ -16,7 +16,7 @@ const SoftSkills = () => {
             Softskills
           </figcaption>
         </figure>
-        <p>
+        <p className="text-justify">
           Soft skills are essential in today’s job market, Developing these
           skills enhances your ability to collaborate effectively, navigate
           challenges, and build strong relationships, making you a valuable

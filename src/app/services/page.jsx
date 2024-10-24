@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React, { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import FrontEndPage from "./components/FrontEndPage";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -44,7 +43,7 @@ const service_data = [
   },
 ];
 
-const ServicesPage = () => {
+const Services = () => {
   const path = usePathname();
   const searchParams = useSearchParams();
   const search = searchParams.get("q");
@@ -54,7 +53,7 @@ const ServicesPage = () => {
 
   useEffect(() => {
     setCurrentTab(parseInt(search));
-    router.push(`${path}?q=${search}`)
+    router.push(`${path}?q=${search}`);
   }, [search]);
 
   return (
@@ -73,15 +72,15 @@ const ServicesPage = () => {
           </h1>
         </div>
       </div>
-      <div className="mx-auto my-0 w-full lg:w-2/3 px-4 py-8 2xl:w-4/5">
+      <div className="mx-auto my-0 w-full px-4 py-8 lg:w-2/3 2xl:w-4/5">
         <section className="flex flex-col gap-8 lg:flex-row lg:gap-4 lg:text-xl">
           <div className="w-full lg:w-1/5">
-            <ul className="flex justify-between gap-4 lg:border-r-4 p-2 lg:p-4 font-semibold lg:flex-col">
+            <ul className="flex justify-between gap-4 p-2 font-semibold lg:flex-col lg:border-r-4 lg:p-4">
               {service_data.map((item) => (
                 <li
                   key={item.id}
                   id={item.link_id}
-                  className={`cursor-pointer rounded border-l-[6px] lg:px-4 lg:py-6 pl-3 text-lg lg:text-3xl ${
+                  className={`cursor-pointer rounded border-l-[6px] pl-3 text-lg lg:px-4 lg:py-6 lg:text-3xl ${
                     currentTab === item.id
                       ? "border-brand text-black"
                       : "border-black/10 text-black/40"
@@ -99,6 +98,14 @@ const ServicesPage = () => {
         </section>
       </div>
     </main>
+  );
+};
+
+const ServicesPage = () => {
+  return (
+    <Suspense>
+      <Services />
+    </Suspense>
   );
 };
 

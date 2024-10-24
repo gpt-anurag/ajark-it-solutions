@@ -4,9 +4,8 @@ const CallToMeet = () => {
   return (
     <section className="bg-[#11423c] text-xl text-white">
       <div className="mx-auto my-0 flex flex-col items-center gap-8 px-6 pb-20 pt-8 md:w-11/12 md:pt-12 lg:w-4/5 lg:px-0">
-        <h3 className="text-center text-4xl font-thin">
-          <span className="font-bold">Let’s Connect</span> in Person (put pulse
-          animation)
+        <h3 className="animate-infinite animate-ease-in-out animate-alternate animate-pulse text-center text-4xl font-thin">
+          <span className="font-bold">Let’s Connect</span> in Person
         </h3>
         <div className="w-full text-center sm:w-3/5">
           At AJARK IT Solutions, we’re passionate about bridging the gap between
