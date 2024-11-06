@@ -45,13 +45,13 @@ const ContactUs = () => {
             <p>info@ajarkitsolutions.com</p>
           </div>
           <div className="flex h-fit flex-col items-center justify-start rounded border bg-white p-4 shadow sm:col-start-7 sm:col-end-13 sm:row-start-2 sm:row-end-3 sm:h-fit lg:col-start-4 lg:col-end-7 lg:row-start-2 lg:row-end-3 2xl:h-auto">
-            <a href="tel:+91630194972">
+            <a href="tel:+916301949752">
               <div className="mb-2 rounded-full border p-4 text-3xl text-brand hover:bg-brand/30">
                 <FiPhoneCall />
               </div>
             </a>
             <h4 className="mb-4 text-2xl font-semibold text-brand">Call Us</h4>
-            <p>+91 630194972</p>
+            <p>+91 6301949752</p>
           </div>
           <div className="w-full rounded border bg-white p-4 shadow sm:col-start-1 sm:col-end-13 sm:row-start-3 sm:row-end-4 lg:col-start-7 lg:col-end-13 lg:row-start-1 lg:row-end-3">
             <ContactUsForm />
