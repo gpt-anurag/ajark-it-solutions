@@ -14,7 +14,7 @@ import Link from "next/link";
 const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
   const path = usePathname();
   const router = useRouter();
-
+  console.log('rendered')
   const handleClick = () => {
     setIsSidebarOpen(false);
   };
@@ -37,18 +37,19 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
 
       <div className="px-4">
         <ul className="flex cursor-pointer flex-col gap-0 text-2xl text-black/30">
-          <li
-            className={`rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60 ${path === "/" && "bg-brand/30"}`}
-          >
-            <Link href={"/"} onClick={handleClick}>
-              Home
-            </Link>
-          </li>
-          <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
-            <Link href={"/#about-section"} onClick={handleClick}>
-              About
-            </Link>
-          </li>
+          <Link href={"/"}>
+            <li
+            onClick={handleClick}
+              className={`rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60 ${path === "/" && "bg-brand/30"}`}
+            > 
+                Home 
+            </li>
+          </Link>
+          <Link href={"/#about-section"} >
+            <li onClick={handleClick} className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
+                About
+            </li>
+          </Link>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-b-0">
               <AccordionTrigger
@@ -132,15 +133,14 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <li className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
-            <Link
+          <Link
               href={"/#contact-section"}
               scroll={true}
-              onClick={handleClick}
             >
-              Contact Us
-            </Link>
-          </li>
+            <li onClick={handleClick} className="rounded p-2 text-black/40 hover:bg-brand/30 hover:text-black/60">
+                Contact Us
+            </li>
+          </Link>
         </ul>
       </div>
     </section>
