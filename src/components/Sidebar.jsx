@@ -112,17 +112,26 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                     <AccordionContent>
                       <ul className="ml-8 flex flex-col gap-0 text-lg">
                         <li className="rounded p-2 hover:text-black">
-                          <p onClick={() => router.push(`/resume`)}>
+                          <p onClick={() => {
+                            router.push(`/resume`)
+                            handleClick()
+                          }}>
                             CV Review
                           </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <p onClick={() => router.push(`/resume`)}>
+                          <p onClick={() => {
+                            router.push(`/resume`)
+                            handleClick()
+                          }}>
                             CV Building
                           </p>
                         </li>
                         <li className="rounded p-2 hover:text-black">
-                          <p onClick={() => router.push(`/resume`)}>
+                          <p onClick={() => {
+                            router.push(`/resume`)
+                            handleClick()
+                          }}>
                             Abroad CV Building
                           </p>
                         </li>
