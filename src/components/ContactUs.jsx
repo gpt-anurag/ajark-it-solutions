@@ -51,7 +51,7 @@ const ContactUs = () => {
               </div>
             </a>
             <h4 className="mb-4 text-2xl font-semibold text-brand">Call Us</h4>
-            <p>+91 6301949752</p>
+            <p>+91 63019 49752</p>
           </div>
           <div className="w-full rounded border bg-white p-4 shadow sm:col-start-1 sm:col-end-13 sm:row-start-3 sm:row-end-4 lg:col-start-7 lg:col-end-13 lg:row-start-1 lg:row-end-3">
             <ContactUsForm />
