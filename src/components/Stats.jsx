@@ -9,13 +9,13 @@ const data = [
     id: 1,
     icon: <BsEmojiSmile />,
     stat_type: "Clients",
-    stat_number: 5,
+    stat_number: "20+",
   },
   {
     id: 2,
     icon: <BsJournalRichtext />,
     stat_type: "Projects",
-    stat_number: 4,
+    stat_number: 10,
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const data = [
     id: 4,
     icon: <BsPeople />,
     stat_type: "Team Members",
-    stat_number: 32,
+    stat_number: "50+",
   },
 ];
 
