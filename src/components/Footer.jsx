@@ -45,7 +45,7 @@ const Footer = () => {
             </p>
             <br />
             <p>
-              <span className="font-semibold">Phone:</span> +91 630194972
+              <span className="font-semibold">Phone:</span> +91 63019 49752
             </p>
             <p>
               <span className="font-semibold">Email:</span>{" "}
